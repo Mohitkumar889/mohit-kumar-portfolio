@@ -5,13 +5,21 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Mohit Kumar Porfolio",
-  description: "created by Mohit",
+  description:
+    "Welcome to Mohit Kumar's portfolio, showcasing a versatile Full Stack Developer with expertise in crafting seamless digital experiences. Explore a dynamic showcase of projects spanning front-end mastery with HTML, CSS, JavaScript, and React, coupled with robust back-end solutions using Node.js, Express, and MongoDB. With a passion for innovation and a keen eye for detail, Mohit delivers SEO-optimized websites and applications that captivate audiences and drive results. From concept to execution, each project reflects Mohit's dedication to excellence and commitment to staying at the forefront of modern web development trends. Elevate your digital presence with Mohit Kumar's expertise today.",
+  keywords:
+    "portfolio, Mohit Kumar, web development, Full Stack Developer, React Developer, Next.js Developer, Laravel Developer, PHP Developer, Node.js Developer, Backend Developer, Web Developer, Frontend and Backend Developer, JavaScript Developer, MERN Stack Developer, RESTful API Developer, Express.js Developer, MongoDB Developer, MySQL Developer, Server-side Development, Database Management, Application Architecture, Code Optimization,front and back end developer,php backend developer,backend developer,freelance backend developer, backend software engineer,backend engineer,backend development,backend web development,senior backend developer,node js backend,backend development services,freelance backend,back end programming,laravel backend,laravel backend developer,aws backend developer, php backend,senior backend engineer,front end back end developer,javascript backend developer,backend development company, remote backend developer,backend api development,best backend for flutter,front back end web developer,backend node developer,full stack backend developer",
+  author: "Mohit Kumar",
+  // robots: "index, follow",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
         <link rel="icon" href="/favicon1.ico" />
         <link
           rel="stylesheet"
