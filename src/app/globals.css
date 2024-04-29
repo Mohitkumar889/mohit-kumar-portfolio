@@ -1376,7 +1376,7 @@ img {
   .navbar .menu {
     position: fixed;
     height: 100vh;
-    width: 40%;
+    width: 50%;
     left: -100%;
     top: 0;
     background: #111;
