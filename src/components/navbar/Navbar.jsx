@@ -9,6 +9,11 @@ function Navbar() {
   const [showScrollTop, setShowScrollTop] = useState("");
   const [isSmoothScroll, setIsSmoothScroll] = useState(true);
   const [pathActive, setPathActive] = useState("");
+  const [NavShow, setNavShow] = useState(false);
+
+  const handleNav = () => {
+    setNavShow(!NavShow);
+  };
 
   useEffect(() => {
     const handleClick = () => {
@@ -70,13 +75,14 @@ function Navbar() {
               <span>K</span> */}
             </a>
           </div>
-          <ul className="menu">
+          <ul className={`menu ${NavShow && "active"}`}>
             <li>
               <Link
                 href="/#home"
                 className={cn("menu-btn", pathActive === "home" && "active")}
                 onClick={() => {
                   setPathActive("home");
+                  handleNav();
                 }}
               >
                 <strong>Home</strong>
@@ -88,6 +94,7 @@ function Navbar() {
                 className={cn("menu-btn", pathActive === "about" && "active")}
                 onClick={() => {
                   setPathActive("about");
+                  handleNav();
                 }}
               >
                 <strong>About</strong>
@@ -102,6 +109,7 @@ function Navbar() {
                 )}
                 onClick={() => {
                   setPathActive("qualification");
+                  handleNav();
                 }}
               >
                 <strong>Qualification</strong>
@@ -113,6 +121,7 @@ function Navbar() {
                 className={cn("menu-btn", pathActive === "skills" && "active")}
                 onClick={() => {
                   setPathActive("skills");
+                  handleNav();
                 }}
               >
                 <strong>Skills</strong>
@@ -127,6 +136,7 @@ function Navbar() {
                 )}
                 onClick={() => {
                   setPathActive("projects");
+                  handleNav();
                 }}
               >
                 <strong>Projects</strong>
@@ -138,6 +148,7 @@ function Navbar() {
                 className={cn("menu-btn", pathActive === "contact" && "active")}
                 onClick={() => {
                   setPathActive("contact");
+                  handleNav();
                 }}
               >
                 <strong>Contact</strong>
@@ -145,7 +156,12 @@ function Navbar() {
             </li>
           </ul>
           <div className={cn("menu-btn")}>
-            <i className={cn("fas fa-bars")}></i>
+            <i
+              className={cn("fas fa-bars")}
+              onClick={() => {
+                handleNav();
+              }}
+            ></i>
           </div>
         </div>
       </nav>
