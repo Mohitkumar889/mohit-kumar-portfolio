@@ -270,8 +270,7 @@ section .title::after {
 /*  Home  */
 .home {
   display: flex;
-  background: url("https://source.unsplash.com/720x600/?programming,code,laptop,web") no-repeat
-    center;
+  background: no-repeat center;
   height: 100vh;
   color: #fff;
   min-height: 500px;

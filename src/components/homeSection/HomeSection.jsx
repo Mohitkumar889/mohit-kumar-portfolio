@@ -3,7 +3,22 @@ import React, { useEffect, useState } from "react";
 import Typed from "typed.js";
 
 function HomeSection() {
+  const [backgroundImage, setBackgroundImage] = useState("");
+  const getRandomImage = () => {
+    const images = [
+      "anas-alshanti-unsplash.jpg",
+      "creative-designer-gadget.jpg",
+      "domenico-loia-unsplash.jpg",
+      "glenn-carstens-peters-unsplash.jpg",
+      "ilya-pavlov-unsplash.png",
+      "lauren-mancke-unsplash.jpg",
+      "sabri-tuzcu-unsplash.jpg",
+    ];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
   useEffect(() => {
+    setBackgroundImage(`/images/portfolio_image/${getRandomImage()}`);
     const typed = new Typed(".typing", {
       strings: [
         "Fullstack Developer",
@@ -23,7 +38,11 @@ function HomeSection() {
 
   return (
     <>
-      <section className="home" id="home">
+      <section
+        className="home"
+        id="home"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
         <div className="max-width">
           <div className="home-content">
             <div className="text-1">Hello, This is</div>
